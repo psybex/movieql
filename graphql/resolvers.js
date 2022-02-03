@@ -1,13 +1,23 @@
-const gapjin = {
-    name: "Gapjin",
-    age: 35,
-    gender: "male"
-};
+import { getById, people } from "./db.js";
+
+// const gapjin = {
+//     name: "Gapjin",
+//     age: 35,
+//     gender: "male"
+// };
+
+// const resolvers = {
+//     Query: {
+//         // name: () => "gapjin"
+//         person: () => gapjin
+//     }
+// };
+
 
 const resolvers = {
     Query: {
-        // name: () => "gapjin"
-        person: () => gapjin
+        people: () => people,
+        person: (_, { id }) => getById(id)
     }
 };
 

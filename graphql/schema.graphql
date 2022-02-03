@@ -1,9 +1,21 @@
-type Gapjin {
-    name: String
-    age: Int
-    gender: String
+# type Gapjin {
+#     name: String
+#     age: Int
+#     gender: String
+# }
+
+# type Query {
+#     person: Gapjin!
+# }
+
+type Person {
+    id: Int!
+    name: String!
+    age: Int!
+    gender: String!
 }
 
 type Query {
-    person: Gapjin!
+    people: [Person]!
+    person(id: Int!): Person
 }
